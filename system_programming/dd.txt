@@ -1,0 +1,11 @@
+
+
+* dd mostly works like cp, with lot of options or parameters.
+
+* To implement I believe :
+    I need to read "if" and write to 'of', 
+    bs = this I will specify in read(, size)
+    seek block in o/p file = use lseek for this
+    skip blocks in i/p file = lseek
+
+    
