@@ -1,0 +1,22 @@
+
+---
+
+- name: Add user to sudo group
+  ansible.builtin.command:
+    cmd: "usermod -aG sudo {{ username }}"
+  args:
+    warn: false
+  register: result
+
+- name: Check the result
+  debug:
+    msg: "{{ result.stdout }}"
+
+- name: Confirm user is added to sudo group
+  ansible.builtin.command:
+    cmd: "groups {{ username }}"
+  register: group_check
+
+- name: Display group memberships
+  debug:
+    msg: "{{ group_check.stdout }}"

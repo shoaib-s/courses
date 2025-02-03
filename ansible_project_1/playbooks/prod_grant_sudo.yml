@@ -1,0 +1,19 @@
+---
+
+# - name: Grant Sudo To PROD Servers TO USER
+#   hosts: prod_intranet
+#   roles:
+#     - prod_remove_sudo
+#   tags:
+#     - prod_remove_sudo
+#   become: True
+
+
+- name: Grant Sudo To PROD Servers TO USER
+  hosts: prod_intranet
+  roles:
+    - prod_grant_sudo
+  tags:
+    - prod_grant_sudo
+  become: True
+

@@ -1,0 +1,20 @@
+
+- name: Remove user from sudo group
+  ansible.builtin.command:
+    cmd: "gpasswd -d {{ username }} sudo"
+  args:
+    warn: True
+  register: result
+
+- name: Check the result
+  debug:
+    msg: "{{ result.stdout }}"
+
+- name: Confirm user is removed from sudo group
+  ansible.builtin.command:
+    cmd: "groups {{ username }}"
+  register: group_check
+
+- name: Display group memberships
+  debug:
+    msg: "{{ group_check.stdout }}"

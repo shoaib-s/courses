@@ -1,0 +1,12 @@
+---
+
+- name: Remove Sudo From PROD Servers TO USER
+  hosts: prod_intranet
+  roles:
+    - prod_remove_sudo
+  tags:
+    - prod_remove_sudo
+  become: True
+
+
+  
