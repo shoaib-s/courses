@@ -15,4 +15,57 @@ The `setup_ansible_project_directory_structure_1.sh` script sets up the initial 
 
 ## Usage
 
-Run the script from the root of your project directory:
+Run the script from the root of your project directory. And it will create following structure.
+
+ss@nlcsvrspk16a-dev5:~/work/nlc/ansible_project_1$ tree .
+.
+├── ansible.cfg
+├── inventories
+│   ├── production
+│   │   ├── group_vars
+│   │   │   └── all.yml
+│   │   ├── hosts
+│   │   └── host_vars
+│   └── staging
+│       ├── group_vars
+│       ├── hosts
+│       └── host_vars
+├── playbooks
+│   ├── prod_grant_sudo.yml
+│   └── prod_remove_sudo.yml
+├── README.md
+├── roles
+│   ├── prod_grant_sudo
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── README.md
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   └── prod_remove_sudo
+│       ├── defaults
+│       │   └── main.yml
+│       ├── files
+│       ├── handlers
+│       │   └── main.yml
+│       ├── meta
+│       │   └── main.yml
+│       ├── README.md
+│       ├── tasks
+│       │   └── main.yml
+│       ├── templates
+│       ├── tests
+│       │   ├── inventory
+│       │   └── test.yml
+│       └── vars
+│           └── main.yml
